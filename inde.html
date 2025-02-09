@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cute Fan Lover</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fff5f7;
+      font-family: 'Arial', sans-serif;
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #ec4899;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #4b5563;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+    .hug-buttonYes {
+      background-color: #ec4899;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 5px;
+    }
+    .hug-buttonYes:hover {
+      background-color: #eb629f;
+    }
+    .hug-buttonNo {
+        background-color: #ec0000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 5px;
+      }
+      .hug-buttonNo:hover {
+        background-color: #ee6262;
+      }
+    .yes-button {
+      transition: transform 0.3s ease;
+    }
+    .gif-container {
+      display: none;
+      text-align: center;
+    }
+    .gif-container img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Will you be my Valentine? 💖</h1>
+    <p>Every moment with you makes my heart smile. Let's keep cheering for each other!</p>
+    <button class="hug-buttonYes yes-button" id="yes-button" onclick="showGif()">Yes 🤗</button>
+    <button class="hug-buttonNo no-button" onclick="growYesButton()">No 😔</button>
+  </div>
+
+  <div class="gif-container" id="gif-container">
+    <h2>You Cute!😘</h2>
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+  </div>
+
+  <script>
+    let clickCount = 0;
+
+    function growYesButton() {
+      clickCount++;
+      const yesButton = document.getElementById('yes-button');
+      const newScale = 1 + clickCount * 0.2;
+      yesButton.style.transform = `scale(${newScale})`;
+    }
+
+    function showGif() {
+      document.querySelector('.card').style.display = 'none';  // ซ่อน card เดิม
+      const gifContainer = document.getElementById('gif-container');
+      gifContainer.style.display = 'block';  // แสดง gif container
+    }
+  </script>
+</body>
+</html>
